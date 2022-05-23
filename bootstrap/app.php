@@ -11,9 +11,14 @@
 |
 */
 
-$app = new Ray\RayDiForLaravel\Application(
+$app = (new Ray\RayDiForLaravel\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__),
-    new Ray\Di\Injector(new App\Ray\Module())
+        match (getenv('APP_ENV')) {
+            'production' => new App\Ray\Context\ProductionContext($_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)),
+            'local', false => new App\Ray\Context\LocalContext(),
+            'testing' => new App\Ray\Context\TestingContext(),
+        }
+    )
 );
 
 /*
