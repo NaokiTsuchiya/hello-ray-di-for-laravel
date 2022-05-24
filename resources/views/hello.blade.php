@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Hello {{ $i }} * 2 = {{ $doubled }}.</h1>
+<p>Now: {{ $now }}</p>
 <form method="GET">
     <label>
         i

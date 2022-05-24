@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Attribute\Loggable;
 use App\Domain\Double\DoubleInterface;
+use App\Domain\Now\NowInterface;
 use App\Http\Requests\GetHelloRequest;
 use Illuminate\Contracts\View\View;
 use Ray\Di\Di\Inject;
@@ -19,7 +20,8 @@ class HelloController extends Controller
 
     public function __construct(
         // Inject dependency
-        private readonly DoubleInterface $double
+        private readonly DoubleInterface $double,
+        private readonly NowInterface $now,
     ){}
 
     #[Inject]
@@ -44,7 +46,8 @@ class HelloController extends Controller
         $i = (int) ($request->validated()['i'] ?? 1);
         return view('hello', [
             'i' => $i,
-            'doubled' => $this->double->double($i)
+            'doubled' => $this->double->double($i),
+            'now' => (string) $this->now,
         ]);
     }
 }

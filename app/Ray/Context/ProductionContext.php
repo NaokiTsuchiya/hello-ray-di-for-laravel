@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Ray\Context;
 
-use App\Ray\Module;
+use App\Ray\Module\Module;
 use Doctrine\Common\Cache\CacheProvider;
 use Ray\Compiler\AbstractInjectorContext;
 use Ray\Compiler\DiCompileModule;
