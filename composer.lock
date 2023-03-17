@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d33c07b233ac0c9d8ab90882984a5d2",
+    "content-hash": "548144808a841ee4642cfdf8024aa612",
     "packages": [
         {
             "name": "brick/math",
@@ -3615,22 +3615,22 @@
         },
         {
             "name": "ray/ray-di-for-laravel",
-            "version": "1.x-dev",
+            "version": "dev-feat/override-module",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ray-di/Ray.RayDiForLaravel.git",
-                "reference": "2d97eec2b31953a876d1c17bbc1758848ce50510"
+                "url": "https://github.com/NaokiTsuchiya/Ray.RayDiForLaravel.git",
+                "reference": "c7a40bcfaa4566a33c19ff98b8d7e916e3c75da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.RayDiForLaravel/zipball/2d97eec2b31953a876d1c17bbc1758848ce50510",
-                "reference": "2d97eec2b31953a876d1c17bbc1758848ce50510",
+                "url": "https://api.github.com/repos/NaokiTsuchiya/Ray.RayDiForLaravel/zipball/c7a40bcfaa4566a33c19ff98b8d7e916e3c75da3",
+                "reference": "c7a40bcfaa4566a33c19ff98b8d7e916e3c75da3",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.10 || ^2.2",
                 "php": ">=8.0",
-                "ray/compiler": "^1.9.2",
+                "ray/compiler": "^1.10",
                 "ray/di": "^2.15.1"
             },
             "require-dev": {
@@ -3640,17 +3640,20 @@
             "suggest": {
                 "ext-apcu": "Needed to use ApcuCacheProvider"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
-                "files": [
-                    "src-files/apcu.php"
-                ],
                 "psr-4": {
                     "Ray\\RayDiForLaravel\\": "src/"
+                },
+                "files": [
+                    "src-files/apcu.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ray\\RayDiForLaravel\\": "tests/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3667,10 +3670,9 @@
                 "laravel"
             ],
             "support": {
-                "issues": "https://github.com/ray-di/Ray.RayDiForLaravel/issues",
-                "source": "https://github.com/ray-di/Ray.RayDiForLaravel/tree/0.2.0"
+                "source": "https://github.com/NaokiTsuchiya/Ray.RayDiForLaravel/tree/feat/override-module"
             },
-            "time": "2023-02-07T02:40:48+00:00"
+            "time": "2023-03-20T02:47:48+00:00"
         },
         {
             "name": "symfony/console",
